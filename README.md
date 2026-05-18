@@ -59,3 +59,45 @@ Cần hiện thực hóa 3 hàm trong file `processor.py` với các tiêu chu�
 - **Thư viện chính**: `pandas`, `numpy`, `scikit-learn`
 - **Thư viện NLP**: `pyvi` hoặc `underthesea` (cho tiếng Việt)
 - **Visualization**: `matplotlib`, `seaborn`
+
+## Reproducible Research Experiment
+
+Pipeline chinh cho bai nghien cuu da duoc cai dat trong `core/research_experiment.py`.
+Script nay chay ca baseline va GridSearchCV theo dung quy trinh:
+
+```bash
+python run_research_experiment.py
+```
+
+Mac dinh script se:
+
+- Doc `data/train.csv` de train va chon tham so.
+- Doc `data/test.csv` chi de danh gia cuoi cung.
+- Chay 3 kieu preprocessing: `none`, `basic`, `advanced`.
+- Chay 4 model: `naive_bayes`, `linear_svm`, `random_forest`, `logistic_regression`.
+- Dung `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)`.
+- Xuat ket qua vao `results/research_YYYYMMDD_HHMMSS/`.
+
+Artifacts duoc sinh ra gom:
+
+- `baseline_results.csv`
+- `tuned_results.csv`
+- `tuned_results.md`
+- `all_results.csv`
+- `best_confusion_matrix.csv`
+- `best_classification_report.csv`
+- `best_model_summary.md`
+- `f1_macro_comparison.png`
+- `best_pipeline.joblib`
+
+Chay smoke test nhanh truoc khi chay full grid:
+
+```bash
+python run_research_experiment.py --quick --sample-size 300 --cv-folds 2 --preprocessing none,basic --models naive_bayes,linear_svm
+```
+
+Chay mot tap model/preprocessing cu the:
+
+```bash
+python run_research_experiment.py --preprocessing basic,advanced --models linear_svm,logistic_regression
+```

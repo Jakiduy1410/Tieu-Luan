@@ -89,3 +89,6 @@ coverage.xml
 .venv
 venv/
 ENV/
+
+# Generated experiment artifacts
+results/
