@@ -27,8 +27,6 @@ wheels/
 *.egg
 
 # PyInstaller
-# Usually these files are written by a standalone easy_installer,
-# for example: python2.7 -m easy_install -U setuptools
 *.manifest
 *.spec
 
@@ -48,47 +46,46 @@ coverage.xml
 .hypothesis/
 
 # Jupyter Notebook
-.ipynb_checkpoints
+.ipynb_checkpoints/
 */.ipynb_checkpoints/*
 
 # IDEs
 .vscode/
 .idea/
 
-# Data and Models
+# Local environment
+.env
+.venv/
+venv/
+ENV/
+
+# Cache / temporary files
+.DS_Store
+Thumbs.db
+
+# Ignore all generated data/model files by default
 *.csv
 *.pkl
 *.joblib
 
-# Cho phép thư mục data được Git theo dõi
+# Allow data folder and its files
 !data/
-
-# Giữ lại dữ liệu gốc
 !data/train.csv
 !data/test.csv
-
-# Giữ lại thư mục chứa dữ liệu đã tiền xử lý
 !data/preprocessed/
 !data/preprocessed/*.csv
 
-# Cho phép thư mục models được Git theo dõi
+# Allow models folder and trained model files
 !models/
-
-# Giữ lại các file model đã train
 !models/*.pkl
 !models/*.joblib
 
-# Nếu Lena lưu model ở thư mục khác, ví dụ output/models/
-!output/
-!output/models/
-!output/models/*.pkl
-!output/models/*.joblib
+# Allow results folder and all experiment outputs
+!results/
+!results/**
 
-# Local environment
-.env
-.venv
-venv/
-ENV/
-
-# Generated experiment artifacts
-results/
+# Allow common report/image outputs anywhere inside project
+!*.md
+!*.png
+!*.jpg
+!*.jpeg
