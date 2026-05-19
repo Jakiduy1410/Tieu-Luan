@@ -1,0 +1,7 @@
+﻿Tập dữ liệu,Mức tiền xử lý,Độ dài văn bản trung bình,Số token trung bình,Số từ vựng khác nhau,Nguồn dữ liệu
+Train,None,121.8,26.16,16003,D:\assignment\Tieu-Luan-main\Tieu-Luan\data\train.csv | tự xử lý mức none
+Train,Basic,115.69,26.1,12399,D:\assignment\Tieu-Luan-main\Tieu-Luan\data\train.csv | tự xử lý mức basic
+Train,Advanced,92.05,20.09,11980,D:\assignment\Tieu-Luan-main\Tieu-Luan\data\train.csv | tự xử lý mức advanced
+Test,None,123.12,26.55,8115,D:\assignment\Tieu-Luan-main\Tieu-Luan\data\preprocessed\test_none.csv
+Test,Basic,115.11,26.03,5812,D:\assignment\Tieu-Luan-main\Tieu-Luan\data\preprocessed\test_basic.csv
+Test,Advanced,90.47,16.49,7448,D:\assignment\Tieu-Luan-main\Tieu-Luan\data\preprocessed\test_advanced.csv
